@@ -41,8 +41,8 @@ def list() {
     def books = Book.list()  // naming conflict here
 
     render(contentType: "text/xml") {
-        books {
-            for (b in results) {
+        books {                  // groovy will misinterpret here
+            for (b in books) {    
                 book(title: b.title)
             }
         }
